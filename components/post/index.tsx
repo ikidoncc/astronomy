@@ -1,4 +1,4 @@
-import { TransformTextToLinik } from 'astronomy/helps/transform-text-to-link.tsx/transform-text-to-link'
+import { TransformTextToLink } from 'astronomy/helps/transform-text-to-link.tsx/transform-text-to-link'
 import { ArrowRight } from 'lucide-react'
 
 export interface PostProps {
@@ -8,11 +8,12 @@ export interface PostProps {
 }
 
 export function Post({ title, resume, author }: PostProps) {
-  const link = TransformTextToLinik(title)
+  const titleToLink = TransformTextToLink(title)
+  const urlLink = `/article/${titleToLink}`
 
   return (
     <div className="group p-6 bg-rosePineDawn-surface rounded-xl cursor-pointer">
-      <a href={link} className="grid gap-4">
+      <a href={urlLink} className="grid gap-4">
         <div className="space-y-2">
           <h2 className="text-xl font-bold group-hover:text-rosePineDawn-love transition-all">
             {title}
