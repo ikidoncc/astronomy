@@ -1,4 +1,4 @@
-export function TransformTextToLinik(plainText: string) {
+export function TransformTextToLink(plainText: string) {
   const plainTextFormated = plainText
     .normalize('NFD')
     .toLowerCase()
